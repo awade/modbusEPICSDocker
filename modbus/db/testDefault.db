@@ -1,0 +1,9 @@
+record(ai, "C3:PSL-modbusDocker")
+{
+  field(HOPR, "10.0") #Set high operating range point
+  field(LOPR, "-10.0") # Set low operating range point
+  field(PREC, "4") # Set display precision
+  field(SCAN, ".1 second") # Set scan aquire rate
+  field(VAL, 1.2345) # Det defult starting point
+  field(DESC, "modbusEPICSDocker test channel")
+}
