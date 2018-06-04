@@ -4,11 +4,8 @@
 # and enter correct IP addresses for those units. You will need to add entries
 # into the .db files in the ../db folder yourself.
 
-epicsEnvSet("IOC", "myiocconfig")
-epicsEnvSet("ARCH","linux-x86_64")
-epicsEnvSet("TOP","${EPICS_MODULES}/modbus")
-epicsEnvSet("MDBTOP","${EPICS_MODULES}/modbus")
-dbLoadDatabase("$(MDBTOP)/dbd/modbus.dbd")
+
+dbLoadDatabase("$(EPICS_ROOT)/modules/modbus/dbd/modbus.dbd")
 modbus_registerRecordDeviceDriver(pdbbase)
 
 
