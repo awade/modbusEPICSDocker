@@ -31,3 +31,5 @@ modbus_registerRecordDeviceDriver(pdbbase)
 
 
 dbLoadDatabase("/home/modbus/db/testDefault.db")
+
+iocInit
