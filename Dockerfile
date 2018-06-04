@@ -5,13 +5,14 @@ MAINTAINER Andrew Wade <awade@ligo.caltech.edu>
 # Set the working directory to /app
 WORKDIR /builddir
 
+
 # Copy the current directory contents into the container at /app
 #ADD ./epics-3.14.12_long /ligo/apps/ubuntu-x86_64
 
 ADD ./config /builddir/config/
 ADD ./modbus /home/modbus/
 
-#EXPOSE 8080
+EXPOSE 5064
 
 ENV EPICS_HOST_ARCH="linux-x86_64" \
     EPICS_ROOT="/opt/epics" \
@@ -51,11 +52,5 @@ RUN apt-get update -q \
 #RUN apt-get --yes install \
 #     vim 
 
-# For manual build of elog
-#RUN apt-get --yes install \
-#    git clone https://bitbucket.org/ritt/elog --recursive && \
-#    cd /builddir/elog 
-#    make && \
-#    make install
 
-#CMD ["elogd", "-p", "8080", "-c", "/home/elogd.cfg"]
+CMD ["elogd", "-p", "8080", "-c", "/home/elogd.cfg"]
