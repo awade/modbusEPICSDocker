@@ -53,4 +53,4 @@ RUN apt-get update -q \
 #     vim 
 
 
-CMD ["elogd", "-p", "8080", "-c", "/home/elogd.cfg"]
+#CMD ["/opt/epics/modules/modbus/bin/linux-x86_64/modbusApp", "/home/modbus/iocBoot/acromag.cmd"]
