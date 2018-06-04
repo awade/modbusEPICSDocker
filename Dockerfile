@@ -8,7 +8,8 @@ WORKDIR /builddir
 # Copy the current directory contents into the container at /app
 #ADD ./epics-3.14.12_long /ligo/apps/ubuntu-x86_64
 
-ADD ./ /builddir/
+ADD ./config /builddir/config/
+ADD ./modbus /home/modbus/
 
 #EXPOSE 8080
 
@@ -22,9 +23,8 @@ RUN apt-get update -q \
     && apt-get --yes install \
        curl g++ make libperl-dev libreadline-dev wget \
        vim \
-    && mkdir /opt/epics \
-    && mkdir /opt/epics/modules \
-    && mkdir /home/modbus \
+#    && mkdir /opt/epics \
+    && mkdir -p /opt/epics/modules \
     && wget https://www.aps.anl.gov/epics/download/modules/asyn4-32.tar.gz \
     && wget https://epics.anl.gov/download/base/base-3.15.5.tar.gz \
     && wget https://github.com/epics-modules/modbus/archive/R2-10-1.tar.gz -O modbus-R2-10-1.tar.gz \
