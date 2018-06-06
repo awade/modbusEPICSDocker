@@ -13,6 +13,9 @@ ADD ./config /builddir/config/
 ADD ./modbus /home/modbus/
 
 EXPOSE 5064
+EXPOSE 5064/udp
+EXPOSE 5065
+EXPOSE 5065/udp
 
 ENV EPICS_HOST_ARCH="linux-x86_64" \
     EPICS_ROOT="/opt/epics" \
