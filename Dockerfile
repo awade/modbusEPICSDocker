@@ -55,4 +55,6 @@ RUN apt-get --yes install \
      vim 
 
 
-CMD ["/opt/epics/modules/modbus/bin/linux-x86_64/modbusApp", "/home/modbus/iocBoot/acromag.cmd"]
+#CMD ["/opt/epics/modules/modbus/bin/linux-x86_64/modbusApp", "/home/modbus/iocBoot/acromag.cmd"]
+ENTRYPOINT ["/opt/epics/modules/modbus/bin/linux-x86_64/modbusApp", "/home/modbus/iocBoot/acromag.cmd"]
+
