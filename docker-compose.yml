@@ -14,10 +14,10 @@ services:
   PMC:
     image: ioctest
     ports:
-      - 5064:5064
-      - 5065:5065
-      - 5064/udp:5064/udp
-      - 5065/udp:5065/udp
+      - "5064:5064"
+      - "5064:5064/udp"
+      - "5065:5065"
+      - "5065:5065/udp"
     volumes:
       - /home/controls/Git/modbusEPICSDocker/modbus/db:/home/modbus/db
       - /home/controls/Git/modbusEPICSDocker/modbus/iocBoot/testacro.cmd:/home/modbus/iocBoot/acromag.cmd
