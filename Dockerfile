@@ -21,7 +21,8 @@ ENV EPICS_HOST_ARCH="linux-x86_64" \
     EPICS_ROOT="/opt/epics" \
     EPICS_BASE="/opt/epics/base" \
     EPICS_BASE_BIN="/opt/epics/base/bin/linux-x86_64" \
-    EPICS_BASE_LIB="/opt/epics/base/lib/linux-x86_64"
+    EPICS_BASE_LIB="/opt/epics/base/lib/linux-x86_64" \
+    PATH="/opt/epics/base/bin/linux-x86_64/:${PATH}"
 
 RUN apt-get update -q \
     && apt-get --yes install \
@@ -54,4 +55,4 @@ RUN apt-get --yes install \
      vim 
 
 
-#CMD ["/opt/epics/modules/modbus/bin/linux-x86_64/modbusApp", "/home/modbus/iocBoot/acromag.cmd"]
+CMD ["/opt/epics/modules/modbus/bin/linux-x86_64/modbusApp", "/home/modbus/iocBoot/acromag.cmd"]
