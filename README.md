@@ -21,7 +21,7 @@ caget C3:PSL-modbusDocker
 For now the docker looks for an iocBoot file at the location /home/modbus/iocBoot/acromag.cmd . Database files (.db files) can be mounted anywhere that doesn't overwrite system or EPICS base/modbus files.  It is recommended to mount all .db files in /home/modbus/db.  A typical docker run command would look like:
 
 ```bash
-> sudo docker run -dt -v /path/to/acromag.cmd:/opt/epics/modules/modbus/iocBoot/iocTest/acromag.cmd -v path/to/databasefiles/db:/home/modbus/db  -p 5064:5064 -p 5065:5065 -p 5064:5064/udp -p 5065:5065/udp ioctest /bin/bash
+sudo docker run -dt -v /path/to/acromag.cmd:/opt/epics/modules/modbus/iocBoot/iocTest/acromag.cmd -v path/to/databasefiles/db:/home/modbus/db  -p 5064:5064 -p 5065:5065 -p 5064:5064/udp -p 5065:5065/udp ioctest /bin/bash
 ```
 
 For launching into an interactive shell for debugging run
