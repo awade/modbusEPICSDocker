@@ -61,7 +61,7 @@ RUN apt-get update -q \
     && apt-get clean
 
 # Editing tools for interactive mode (disable for thinner build)
-RUN apt-get --yes install \
-     vim
+#RUN apt-get --yes install \
+#     vim
 
 ENTRYPOINT ["/opt/epics/modules/modbus/bin/linux-x86_64/modbusApp", "/home/modbus/IOCStart.cmd"]
