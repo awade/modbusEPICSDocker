@@ -1,4 +1,4 @@
-record(ai, "C3:PSL-modbusDocker")
+record(ai, "C3:EXP-modbusDocker")
 {
   field(HOPR, "10.0") #Set high operating range point
   field(LOPR, "-10.0") # Set low operating range point
