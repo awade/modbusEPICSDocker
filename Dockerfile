@@ -6,7 +6,7 @@ MAINTAINER Andrew Wade <awade@ligo.caltech.edu>
 # This docker is a ready made modbus server built on an EPICS base.
 # Versions used are:
 # - base-3.15.5, asyn4-32 and modbusR2-10-1
-# 
+#
 # This should work as a standalone instance that is OS agnostic.  See README
 # for instructions on how to run.
 
@@ -16,7 +16,7 @@ MAINTAINER Andrew Wade <awade@ligo.caltech.edu>
 WORKDIR /builddir
 
 
-# Copy the relevant directory contents into the container build dir 
+# Copy the relevant directory contents into the container build dir
 
 ADD ./config /builddir/config/
 ADD ./modbus /home/modbus/
@@ -59,10 +59,9 @@ RUN apt-get update -q \
     && cd /opt/epics/modules/modbus \
     && make \
     && apt-get clean
-  
+
 # Editing tools for interactive mode (disable for thinner build)
 RUN apt-get --yes install \
-     vim 
+     vim
 
-ENTRYPOINT ["/opt/epics/modules/modbus/bin/linux-x86_64/modbusApp", "/home/modbus/iocBoot/acromag.cmd"]
-
+ENTRYPOINT ["/opt/epics/modules/modbus/bin/linux-x86_64/modbusApp", "/home/modbus/IOCStart.cmd"]
