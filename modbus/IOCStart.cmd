@@ -9,7 +9,7 @@ dbLoadDatabase("$(EPICS_ROOT)/modules/modbus/dbd/modbus.dbd")
 modbus_registerRecordDeviceDriver(pdbbase)
 
 
-#### TEST XT1211 ####
+#### TEST XT1221 ####
 #drvAsynIPPortConfigure("xt1221test1","10.0.1.10:502",0,0,1)
 #modbusInterposeConfig("xt1221test1",0,5000,0)
 #drvModbusAsynConfigure("ADC_Reg_1","xt1221test1",0,4,0,8,4,32,"Acromag")
