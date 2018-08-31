@@ -1,0 +1,142 @@
+## READ IN CHANNELS FROM ACROMAG CARDS TO BROADCAST ##
+# Set XXXX to the acromag card identifier
+# and YYYY to the experiment identifier
+# Change C2 to the lab identifier
+
+
+####
+#Chan_A
+record(ai, "C2:ACROMAG_INPUT_XXXX0") #Grab channel off accromag card
+{
+  field(SCAN, ".1 second")
+  field(FLNK, "C2:ACROMAG_INPUT_XXXX0_C.PROC")
+  field(DTYP, "asynInt32")
+  field(INP, "@asynMask(ADC_Reg_XXXX 0 -16)MODBUS_DATA")
+}
+record(calc, "C2:YYYY-CHAN_A") #Calibrate voltage and generate soft channel
+{
+  field(CALC,"A*4.9938E-4+6.2331E-4")
+  field(SCAN, ".1 second")
+  field(INPA,"C2:ACROMAG_INPUT_XXXX0")
+}
+
+####
+#Chan_B
+
+record(ai, "C2:ACROMAG_INPUT_XXXX1") #Grab channel off accromag card
+{
+  field(SCAN, ".1 second")
+  field(FLNK, "C2:ACROMAG_INPUT_XXXX1_C.PROC")
+  field(DTYP, "asynInt32")
+  field(INP, "@asynMask(ADC_Reg_XXXX 1 -16)MODBUS_DATA")
+}
+record(calc, "C2:YYYY-CHAN_B") #Calibrate voltage and generate soft channel
+{
+  field(CALC,"A*4.9938E-4+6.2331E-4")
+  field(SCAN, ".1 second")
+  field(INPA,"C2:ACROMAG_INPUT_XXXX1")
+}
+
+####
+#Chan_C
+
+record(ai, "C2:ACROMAG_INPUT_XXXX2") #Grab channel off accromag card
+{
+  field(SCAN, ".1 second")
+  field(FLNK, "C2:ACROMAG_INPUT_XXXX2_C.PROC")
+  field(DTYP, "asynInt32")
+  field(INP, "@asynMask(ADC_Reg_XXXX 2 -16)MODBUS_DATA")
+}
+record(calc, "C2:YYYY-CHAN_C") #Calibrate voltage and generate soft channel
+{
+  field(CALC,"A*4.9938E-4+6.2331E-4")
+  field(SCAN, ".1 second")
+  field(INPA,"C2:ACROMAG_INPUT_XXXX2")
+}
+
+####
+#Chan_D
+
+record(ai, "C2:ACROMAG_INPUT_XXXX3") #Grab channel off accromag card
+{
+  field(SCAN, ".1 second")
+  field(FLNK, "C2:ACROMAG_INPUT_XXXX3_C.PROC")
+  field(DTYP, "asynInt32")
+  field(INP, "@asynMask(ADC_Reg_XXXX 3 -16)MODBUS_DATA")
+}
+record(calc, "C2:YYYY-CHAN_D") #Calibrate voltage and generate soft channel
+{
+  field(CALC,"A*4.9938E-4+6.2331E-4")
+  field(SCAN, ".1 second")
+  field(INPA,"C2:ACROMAG_INPUT_XXXX3")
+}
+
+
+####
+#Chan_E
+
+record(ai, "C2:ACROMAG_INPUT_XXXX4") #Grab channel off accromag card
+{
+  field(SCAN, ".1 second")
+  field(FLNK, "C2:ACROMAG_INPUT_XXXX4_C.PROC")
+  field(DTYP, "asynInt32")
+  field(INP, "@asynMask(ADC_Reg_XXXX 4 -16)MODBUS_DATA")
+}
+record(calc, "C2:YYYY-CHAN_E") #Calibrate voltage and generate soft channel
+{
+  field(CALC,"A*4.9938E-4+6.2331E-4")
+  field(SCAN, ".1 second")
+  field(INPA,"C2:ACROMAG_INPUT_XXXX4")
+}
+
+
+####
+#Chan_F
+
+record(ai, "C2:ACROMAG_INPUT_XXXX5") #Grab channel off accromag card
+{
+  field(SCAN, ".1 second")
+  field(FLNK, "C2:ACROMAG_INPUT_XXXX5_C.PROC")
+  field(DTYP, "asynInt32")
+  field(INP, "@asynMask(ADC_Reg_XXXX 5 -16)MODBUS_DATA")
+}
+record(calc, "C2:YYYY-CHAN_F") #Calibrate voltage and generate soft channel
+{
+  field(CALC,"A*4.9938E-4+6.2331E-4")
+  field(SCAN, ".1 second")
+  field(INPA,"C2:ACROMAG_INPUT_XXXX5")
+}
+
+####
+#Chan_G
+
+record(ai, "C2:ACROMAG_INPUT_XXXX6") #Grab channel off accromag card
+{
+  field(SCAN, ".1 second")
+  field(FLNK, "C2:ACROMAG_INPUT_XXXX6_C.PROC")
+  field(DTYP, "asynInt32")
+  field(INP, "@asynMask(ADC_Reg_XXXX 6 -16)MODBUS_DATA")
+}
+record(calc, "C2:YYYY-CHAN_G") #Calibrate voltage and generate soft channel
+{
+  field(CALC,"A*4.9938E-4+6.2331E-4")
+  field(SCAN, ".1 second")
+  field(INPA,"C2:ACROMAG_INPUT_XXXX6")
+}
+
+####
+#Chan_H
+
+record(ai, "C2:ACROMAG_INPUT_XXXX7") #Grab channel off accromag card
+{
+  field(SCAN, ".1 second")
+  field(FLNK, "C2:ACROMAG_INPUT_XXXX7_C.PROC")
+  field(DTYP, "asynInt32")
+  field(INP, "@asynMask(ADC_Reg_XXXX 7 -16)MODBUS_DATA")
+}
+record(calc, "C2:YYYY-CHAN_H") #Calibrate voltage and generate soft channel
+{
+  field(CALC,"A*4.9938E-4+6.2331E-4")
+  field(SCAN, ".1 second")
+  field(INPA,"C2:ACROMAG_INPUT_XXXX7")
+}
