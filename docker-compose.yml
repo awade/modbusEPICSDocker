@@ -1,27 +1,16 @@
-version: '3'
+version: '2'
 
-#volumes:
-#  dockerVolumeName:
-
-
-## CMDline start
-#sudo docker run -it
-#-v /home/controls/Git/modbusEPICSDocker/modbus/db:/home/modbus/db
-#-v /home/controls/Git/modbusEPICSDocker/modbus/iocBoot/testacro.cmd:/home/modbus/iocBoot/acromag.cmd
-#-p 5064:5064 -p 5065:5065 -p 5064:5064/udp -p 5065:5065/udp ioctest /bin/bash
+volumes:
+  testvol:
 
 services:
-  PMC:
-    image: ioctest
+  app:
+    image: andrewwade/modbusepicsdocker
     ports:
-      - "5064:5064"
-      - "5064:5064/udp"
-      - "5065:5065"
-      - "5065:5065/udp"
+      - 5064:5064
+      - 5065:5065
     volumes:
-      - /home/controls/Git/modbusEPICSDocker/modbus/db:/home/modbus/db
-      - /home/controls/Git/modbusEPICSDocker/modbus/iocBoot/testacro.cmd:/home/modbus/iocBoot/acromag.cmd
-#    environment:
-#      - ENV_VAR=value
+      - testvol:/test
     network_mode: bridge
     restart: always
+    tty: true
