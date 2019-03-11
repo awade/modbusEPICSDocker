@@ -1,7 +1,6 @@
 version: '2'
 
-volumes:
-  testvol:
+#volumes:
 
 services:
   app:
@@ -9,8 +8,6 @@ services:
     ports:
       - 5064:5064
       - 5065:5065
-    volumes:
-      - testvol:/test
     network_mode: bridge
     restart: always
     tty: true
