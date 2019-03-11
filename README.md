@@ -13,9 +13,9 @@ sudo docker run  --name=testiocContainer -dt -p 5064:5064 -p 5065:5065 -p 5064:5
 
 Here four ports are exposed, these are needed to receive queries from clients looking for channels.  
 
-A test channel, C3:PSL-modbusDocker, will be broadcast.  You can check its reaching your network by running the following on another computer with EPICS tools installed:
+A test channel, C3:EXP-modbusDocker, will be broadcast.  You can check its reaching your network by running the following on another computer with EPICS tools installed:
 ```bash
-caget C3:PSL-modbusDocker
+caget C3:EXP-modbusDocker
 ```
 
 For now the docker looks for an iocBoot file at the location /home/modbus/iocBoot/acromag.cmd . Database files (.db files) can be mounted anywhere that doesn't overwrite system or EPICS base/modbus files.  It is recommended to mount all .db files in /home/modbus/db.  A typical docker run command would look like:
